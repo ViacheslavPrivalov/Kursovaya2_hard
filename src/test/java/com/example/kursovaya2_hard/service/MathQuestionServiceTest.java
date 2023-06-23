@@ -21,10 +21,9 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class JavaQuestionServiceTest {
-
+public class MathQuestionServiceTest {
     private final QuestionRepository repositoryMock = mock(QuestionRepository.class);
-    private JavaQuestionService out;
+    private MathQuestionService out;
 
     private final Question q = new Question("q", "a");
 
@@ -42,10 +41,9 @@ public class JavaQuestionServiceTest {
         );
     }
 
-
     @BeforeEach
     public void initOut() {
-        out = new JavaQuestionService(repositoryMock);
+        out = new MathQuestionService(repositoryMock);
         when(repositoryMock.add(anyString(), anyString())).thenReturn(q);
         when(repositoryMock.add(any())).thenReturn(q);
         when(repositoryMock.remove(any())).thenReturn(q);
