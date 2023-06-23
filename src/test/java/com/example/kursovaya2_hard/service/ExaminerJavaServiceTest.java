@@ -1,7 +1,7 @@
 package com.example.kursovaya2_hard.service;
 
-import com.example.kursovaya2.exceptions.AmountVeryBigException;
-import com.example.kursovaya2.model.Question;
+import com.example.kursovaya2_hard.exceptions.AmountVeryBigException;
+import com.example.kursovaya2_hard.model.Question;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,9 +15,9 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class ExaminerServiceTest {
+public class ExaminerJavaServiceTest {
     private final JavaQuestionService serviceMock = mock(JavaQuestionService.class);
-    private ExaminerService out;
+    private ExaminerJavaService out;
     private static Collection<Question> questions = Set.of(
             new Question("question", "answer"),
             new Question("Question", "Answer"),
@@ -28,7 +28,7 @@ public class ExaminerServiceTest {
 
     @BeforeEach
     public void init() {
-        out = new ExaminerServiceImpl(serviceMock);
+        out = new ExaminerJavaService(serviceMock);
         when(serviceMock.getAll()).thenReturn(questions);
         when(serviceMock.getRandomQuestion()).thenReturn(randomQuestion);
     }

@@ -1,6 +1,6 @@
 package com.example.kursovaya2_hard.service;
 
-import com.example.kursovaya2.model.Question;
+import com.example.kursovaya2_hard.model.Question;
 
 import java.util.Collection;
 
